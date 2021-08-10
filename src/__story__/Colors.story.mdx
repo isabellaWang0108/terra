@@ -1,47 +1,46 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
-import { Brand, Content, Environmental, Utility } from './Colors.story.js'
-// import { Card } from "@components/Card";
+import { Tabs, Tab } from '../Tabs'
+import ColorsOverview from './ColorsOverview.mdx'
+export const ColorPage = () => {
+  const [currentTab, setCurrentTab] = React.useState('Overview')
+  return (
+    <>
+      <Tabs>
+        <Tab
+          id={'Overview'}
+          onClick={() => {
+            setCurrentTab('Overview')
+          }}
+          selected={currentTab === 'Overview'}
+        >
+          Overview
+        </Tab>
+        <Tab
+          id={'Usage'}
+          onClick={() => {
+            setCurrentTab('Usage')
+          }}
+          selected={currentTab === 'Usage'}
+        >
+          Usage
+        </Tab>
+        <Tab
+          id={'Code'}
+          onClick={() => {
+            setCurrentTab('Code')
+          }}
+          selected={currentTab === 'Code'}
+        >
+          Code
+        </Tab>
+      </Tabs>
+      {currentTab === 'Overview' ? <ColorsOverview /> : null}
+      {/* {currentTab === 'Usage' ? <ColorsUsage /> : null} */}
+      {/* {currentTab === 'Usage' ? <ColorsCode /> : null} */}
+    </>
+  )
+}
 
 <Meta title="Style/Colors" />
 
-OVERVIEW | USAGE | CODE - TODO
-
-# Color & Design
-
-Color brings a design to life. Color is versatile; it's used to express emotion and tone,
-as well as place emphasis and create associations. Color should always be used in meaningful and
-intentional ways in order to create patterns and visual cues.
-
-Maintaining consistent expression of the VTS brand is extended... ...searchable, and interactive.
-
----
-
-# Brand color
-
-Brand color plays an important role in Marketing and product design, ..., and call-to-action.
-
-<Story name="Brand">{Brand}</Story>
-
----
-
-# Content color
-
-Content colors are semantically named ... and iconography.
-
-<Story name="Content">{Content}</Story>
-
----
-
-# Environmental color
-
-Environmental colors are...
-
-<Story name="Environmental">{Environmental}</Story>
-
----
-
-# Utility color
-
-Utility color should assign and deliberate meaning to an interface element. Incorporate... error, and warning states.
-
-<Story name="Utility">{Utility}</Story>
+<ColorPage />

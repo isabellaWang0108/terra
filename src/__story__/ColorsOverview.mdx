@@ -1,0 +1,154 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { ColorCollection, ColorGroup, ColorSection, Color } from './ColorComponents'
+
+<Meta title="Style/ColorsOverview" />
+
+# Color & Design
+
+Color brings a design to life. Color is versatile; it's used to express emotion and tone,
+as well as place emphasis and create associations. Color should always be used in meaningful and
+intentional ways in order to create patterns and visual cues.
+
+Maintaining consistent expression of the VTS brand is extended... ...searchable, and interactive.
+
+---
+
+# Brand color
+
+Brand color plays an important role in Marketing and product design, ..., and call-to-action.
+
+<ColorCollection title="Brand color">
+  <ColorGroup groupTitle={'Primary Color'}>
+    <ColorSection sectionTitle={'Section 1'}>
+      <Color swatch="#140532" variable="$indigo-120" isWhiteText use="on-hover primary link" />
+      <Color swatch="#280f96" variable="$indigo-110" isWhiteText use="on-hover primary button" />
+      <Color
+        swatch="#5528ff"
+        variable="$indigo-100"
+        isWhiteText
+        isBaseColor
+        use="on-hover primary link"
+      />
+      <Color swatch="#8c82ff" variable="$indigo-090" use="on-hover primary link" />
+      <Color swatch="#c8c8ff" variable="$indigo-070" use="on-hover primary link" />
+    </ColorSection>
+  </ColorGroup>
+  <ColorGroup groupTitle={'Accent Color'}>
+    <ColorSection sectionTitle={'Section 1'}>
+      <Color
+        swatch="#ffb200"
+        variable="$egg-100"
+        isWhiteText
+        isBaseColor
+        use="on-hover primary link"
+      />
+      <Color swatch="#ffd87f" variable="$egg-050" use="on-hover primary button" />
+    </ColorSection>
+    <ColorSection sectionTitle={'Section 2'}>
+      <Color
+        swatch="#55FF55"
+        variable="$some-kinda-green"
+        isBaseColor
+        use="on-hover primary link"
+      />
+      <Color swatch="#AAFFAA" variable="$egg-050" use="on-hover primary button" />
+    </ColorSection>
+  </ColorGroup>
+  <ColorGroup groupTitle={'Other Test Colors'}>
+    <ColorSection sectionTitle={'Section 1'}>
+      <Color swatch="#000" variable="$black-100" isWhiteText use="on-hover primary link" />
+      <Color swatch="#191919" variable="$black-090" isWhiteText use="on-hover primary button" />
+      <Color swatch="#666666" variable="$black-060" isWhiteText use="on-hover primary link" />
+      <Color swatch="#a6a6a6" variable="$black-035" use="on-hover primary link" />
+      <Color swatch="#cccccc" variable="$black-020" use="on-hover primary link" />
+      <Color swatch="#e5e5e5" variable="$black-010" use="on-hover primary link" />
+      <Color swatch="#f7f7f7" variable="$black-003" use="on-hover primary link" />
+      <Color swatch="#fff" variable="$white-100" use="on-hover primary link" />
+    </ColorSection>
+  </ColorGroup>
+</ColorCollection>
+
+---
+
+# Content color
+
+Content colors are semantically named ... and iconography.
+
+<ColorCollection title="Content color">
+  <ColorGroup groupTitle={''}>
+    <ColorSection sectionTitle={'Section 1'}>
+      <Color swatch="#666666" variable="$black-060" isWhiteText use="on-hover primary link" />
+    </ColorSection>
+    <ColorSection sectionTitle={'Section 2'}>
+      <Color swatch="#a6a6a6" variable="$black-035" use="on-hover primary link" />
+    </ColorSection>
+    <ColorSection sectionTitle={'Section 3'}>
+      <Color swatch="#f7f7f7" variable="$black-003" use="on-hover primary link" />
+    </ColorSection>
+  </ColorGroup>
+</ColorCollection>
+
+---
+
+# Environmental color
+
+Environmental colors are...
+
+<ColorCollection title="Environmental color">
+  <ColorGroup groupTitle={''}>
+    <ColorSection sectionTitle={'Section 1'}>
+      <Color swatch="#666666" variable="$black-060" isWhiteText use="on-hover primary link" />
+    </ColorSection>
+    <ColorSection sectionTitle={'Section 2'}>
+      <Color swatch="#a6a6a6" variable="$black-035" use="on-hover primary link" />
+    </ColorSection>
+    <ColorSection sectionTitle={'Section 3'}>
+      <Color swatch="#cccccc" variable="$black-020" use="on-hover primary link" />
+    </ColorSection>
+    <ColorSection sectionTitle={'Section 4'}>
+      <Color swatch="#e5e5e5" variable="$black-010" use="on-hover primary link" />
+    </ColorSection>
+  </ColorGroup>
+</ColorCollection>
+
+---
+
+# Utility color
+
+Utility color should assign and deliberate meaning to an interface element. Incorporate... error, and warning states.
+
+<ColorCollection title="Utility color">
+  <ColorGroup groupTitle={'Success Color'}>
+    <ColorSection sectionTitle={'Section 1'}>
+      <Color
+        swatch="#008759"
+        variable="$green-140"
+        isWhiteText
+        isBaseColor
+        use="on-hover primary link"
+      />
+      <Color swatch="#00e295" variable="$green-100" isWhiteText use="on-hover primary link" />
+    </ColorSection>
+  </ColorGroup>
+  <ColorGroup groupTitle={'Error Color'}>
+    <ColorSection sectionTitle={'Section 1'}>
+      <Color
+        swatch="#e60c0c"
+        variable="$red-100"
+        isWhiteText
+        isBaseColor
+        use="on-hover primary link"
+      />
+      <Color swatch="#ffa39e" variable="$red-050" use="on-hover primary link" />
+      <Color swatch="#fff1f0" variable="$red-010" use="on-hover primary link" />
+    </ColorSection>
+  </ColorGroup>
+  <ColorGroup groupTitle={'Warning Color'}>
+    <ColorSection sectionTitle={'Section 1'}>
+      <Color swatch="#ff9e00" variable="$orange-100" isWhiteText use="on-hover primary link" />
+    </ColorSection>
+    <ColorSection sectionTitle={'Section 2'}>
+      <Color swatch="#ff8044" variable="$coral-100" isWhiteText use="on-hover primary link" />
+    </ColorSection>
+  </ColorGroup>
+</ColorCollection>
