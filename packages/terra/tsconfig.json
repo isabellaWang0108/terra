@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "types",
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "include": ["lib/**/*"],
+  "exclude": [
+    "node_modules",
+    "types",
+    "lib/**/*.stories.tsx",
+    "lib/**/*.story.tsx",
+    "lib/**/*.stories.mdx",
+    "lib/**/*.story.mdx"
+  ]
+}
