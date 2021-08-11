@@ -1,39 +1,14 @@
 :root {
   --white-100: #ffffff;
-  --orange-100: #ff9e00;
-  --black-035: #a6a6a6;
-  --green-140: #008759;
   --black-010: #e5e5e5;
   --border-radius: 3px;
   --card-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
-  --fill-xs: 2px;
 }
 
 .card {
   background-color: var(--white-100);
   border-radius: var(--border-radius);
   box-shadow: var(--card-box-shadow);
-}
-
-.alert {
-  border-top: 2px solid var(--orange-100);
-  display: inline-block;
-  margin-bottom: 0;
-  padding: fill-xs;
-
-  [class^='icon-'],
-  [class*='icon-'] {
-    &::before {
-      color: var(--black-035);
-    }
-  }
-}
-
-.success {
-  border-top: 2px solid var(--green-140);
-  display: inline-block;
-  margin-bottom: 0;
-  padding: var(--fill-xs);
 }
 
 .cardContentPadded > .card {

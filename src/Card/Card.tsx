@@ -4,7 +4,6 @@ import s from './Card.module.less'
 
 interface CardProps {
   children: React.ReactNode
-  type?: 'default' | 'alert' | 'success'
   dataTest?: string
   className?: string
 }
@@ -25,12 +24,11 @@ interface CardFooterProps {
   className?: string
 }
 
-export const Card = ({ children, className = '', dataTest, type = 'default' }: CardProps) => {
+export const Card = ({ children, className = '', dataTest }: CardProps) => {
   return (
     <div
       className={classNames({
         [s.card]: true,
-        [s[type]]: type !== 'default',
         [className]: !!className,
       })}
       data-test={dataTest}
@@ -44,7 +42,6 @@ const CardHeader = ({ className = '', children }: CardHeaderProps) => (
   <div
     className={classNames({
       [s.cardHeader]: true,
-      'u-border-bottom': true,
       [className]: !!className,
     })}
   >
