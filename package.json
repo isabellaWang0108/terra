@@ -17,6 +17,7 @@
   "homepage": "https://github.com/viewthespace/terra#readme",
   "dependencies": {
     "@storybook/addon-docs": "^6.3.7",
+    "classnames": "^2.3.1",
     "less": "^3.13.1",
     "less-loader": "^7.3.0",
     "lodash": "^4.17.21",
