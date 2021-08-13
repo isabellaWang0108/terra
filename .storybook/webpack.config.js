@@ -1,8 +1,10 @@
 const terraConfig = require('../webpack.config')
+const lessLoader = require('../webpack/loaders/less')
 const lessModuleLoader = require('../webpack/loaders/less.module')
-const filter = require('lodash/filter');
+const filter = require('lodash/filter')
 
 const configureRules = config => {
+  config.module.rules.push(lessLoader)
   config.module.rules.push(lessModuleLoader)
 
   const getCssRules = rules => filter(rules, rule => String(rule.test).match(/[^s]css/))
@@ -13,7 +15,7 @@ const configureRules = config => {
   })
 }
 
-const configurePlugins = (config) => {
+const configurePlugins = config => {
   config.plugins = config.plugins.concat(terraConfig.plugins)
 }
 
