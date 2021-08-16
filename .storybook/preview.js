@@ -1,5 +1,5 @@
 import '../src/stylesheets/fonts.less'
-import '../src/stylesheets/storybook.less'
+import './main.less'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
