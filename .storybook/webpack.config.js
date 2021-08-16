@@ -1,7 +1,27 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const terraConfig = require('../webpack.config')
-const lessLoader = require('../webpack/loaders/less')
 const lessModuleLoader = require('../webpack/loaders/less.module')
 const filter = require('lodash/filter')
+
+const lessLoader = {
+  test: /\.less$/,
+  use: [
+    MiniCssExtractPlugin.loader,
+    {
+      loader: 'css-loader',
+    },
+    {
+      loader: 'less-loader',
+      options: {
+        lessOptions: {
+          modifyVars: {},
+          javascriptEnabled: true,
+        },
+      },
+    },
+  ],
+  exclude: /\.module\.less$/,
+}
 
 const configureRules = config => {
   config.module.rules.push(lessLoader)
