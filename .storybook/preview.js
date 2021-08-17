@@ -1,4 +1,5 @@
 import '../src/stylesheets/fonts.less'
+import '../src/stylesheets/typography.less'
 import './main.less'
 
 export const parameters = {
