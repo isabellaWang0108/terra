@@ -58,7 +58,7 @@ export function Tab<TabId extends string>({
         [s.tab]: true,
         [s.selected]: selected,
         [s.iconOnly]: iconOnly,
-        [`u-font-${fontSize}`]: true,
+        [`body-1`]: true,
         [className]: !!className,
       })}
       aria-selected={selected}
