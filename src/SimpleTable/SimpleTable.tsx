@@ -1,6 +1,6 @@
 import s from './SimpleTable.module.less'
 
-export const SimpleTable = ({ columns, children }) => (
+export const SimpleTable = ({ title, columns, children }) => (
   <table className={[s.table]} style={{ width: '100%' }}>
     <colgroup>
       {columns.map(column => (
@@ -9,9 +9,11 @@ export const SimpleTable = ({ columns, children }) => (
     </colgroup>
     <thead className={[s.tableHeader]}>
       <tr>
-        {columns.map(column => (
-          <th className={[s.tableHeaderCell]}>{column.name}</th>
-        ))}
+        {columns
+          .filter(column => column.name !== '')
+          .map(column => (
+            <th className={[s.tableHeaderCell]}>{column.name}</th>
+          ))}
       </tr>
     </thead>
     <tbody>{children}</tbody>
