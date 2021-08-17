@@ -1,0 +1,52 @@
+import { Meta } from '@storybook/addon-docs'
+import { Card } from '../Card'
+import { Tabs, Tab } from '../Tabs'
+import TypographyOverview from './TypographyOverview.mdx'
+import TypographyUsage from './TypographyUsage.mdx'
+
+export const TypographyPage = () => {
+  const [currentTab, setCurrentTab] = React.useState('overview')
+  return (
+    <>
+      <Tabs>
+        <Tab
+          id={'overview'}
+          onClick={() => {
+            setCurrentTab('overview')
+          }}
+          selected={currentTab === 'overview'}
+        >
+          Overview
+        </Tab>
+        <Tab
+          id={'usage'}
+          onClick={() => {
+            setCurrentTab('usage')
+          }}
+          selected={currentTab === 'usage'}
+        >
+          Usage
+        </Tab>
+        <Tab
+          id={'code'}
+          onClick={() => {
+            setCurrentTab('code')
+          }}
+          selected={currentTab === 'code'}
+        >
+          Code
+        </Tab>
+      </Tabs>
+      {currentTab === 'overview' ? <TypographyOverview /> : null}
+      {currentTab === 'usage' ? <TypographyUsage /> : null}
+    </>
+  )
+}
+
+<Meta title="Style/Typography" />
+
+# Typography
+
+## Typography brings a design to life. Typography is versatile; it’s used to express emotion and tone, as well as place emphasis to create associations. Typography should always be used in meaningful and intentional ways in order to create patterns and visual cues.
+
+<TypographyPage />
