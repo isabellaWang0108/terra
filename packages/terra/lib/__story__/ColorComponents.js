@@ -1,11 +1,13 @@
-import { Card } from '../Card'
-import { SimpleTable, SimpleTableRow, SimpleTableCell } from '../SimpleTable'
+import { Card } from '@sb-config/components/Card'
+import { SimpleTable, SimpleTableRow, SimpleTableCell } from '@sb-config/components/SimpleTable'
+
 const magicNumbers = {
   firstColumnWidth: '210px',
   secondColumnWidth: '100px',
   columnPadding: '17px',
   rowHeight: '30px',
 }
+
 export const Color = ({ variable, swatch, isBaseColor, isWhiteText }) => {
   return (
     <div className="swatch">
@@ -37,11 +39,13 @@ export const Color = ({ variable, swatch, isBaseColor, isWhiteText }) => {
     </div>
   )
 }
+
 export const ColorSection = ({ children }) => {
   return (
     <div style={{ marginRight: '20px', marginTop: '15px', marginBottom: '15px' }}>{children}</div>
   )
 }
+
 export const ColorGroup = ({ groupTitle, children }) => {
   return (
     <div
@@ -57,6 +61,7 @@ export const ColorGroup = ({ groupTitle, children }) => {
     </div>
   )
 }
+
 export const ColorCollection = ({ children }) => {
   return <div style={{ display: 'flex', fontFamily: 'Roboto, sans-serif' }}>{children}</div>
 }
@@ -78,6 +83,7 @@ export const ColorTableColorCell = ({ color, hexCode }) => {
     </div>
   )
 }
+
 export const ColorTable = () => (
   <Card>
     <Card.Content>

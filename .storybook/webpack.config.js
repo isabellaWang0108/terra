@@ -65,7 +65,15 @@ const configurePlugins = config => {
   config.plugins.push(new MiniCssExtractPlugin())
 }
 
+const configureAlias = (config) => {
+  config.resolve.alias = {
+    ...(config.resolve.alias || {}),
+    '@sb-config': __dirname
+  }
+}
+
 module.exports = async ({ config }) => {
+  configureAlias(config)
   configureRules(config)
   configurePlugins(config)
 
