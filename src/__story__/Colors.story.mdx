@@ -1,6 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
 import { Tabs, Tab } from '../Tabs'
 import ColorsOverview from './ColorsOverview.mdx'
+import ColorsUsage from './ColorsUsage.mdx'
 export const ColorPage = () => {
   const [currentTab, setCurrentTab] = React.useState('Overview')
   return (
@@ -35,12 +36,16 @@ export const ColorPage = () => {
         </Tab>
       </Tabs>
       {currentTab === 'Overview' ? <ColorsOverview /> : null}
-      {/* {currentTab === 'Usage' ? <ColorsUsage /> : null} */}
+      {currentTab === 'Usage' ? <ColorsUsage /> : null}
       {/* {currentTab === 'Usage' ? <ColorsCode /> : null} */}
     </>
   )
 }
 
 <Meta title="Style/Colors" />
+
+# Color & Design
+
+Color brings a design to life. Color is versatile; it’s used to express emotion and tone, as well as place emphasis and create associations. Color should always be used in meaningful and intentional ways in order to create patterns and visual cues.
 
 <ColorPage />
