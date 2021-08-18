@@ -1,6 +1,6 @@
 import classNames from 'classnames'
-import { Card } from '../Card'
-import { SimpleTable, SimpleTableRow, SimpleTableCell } from '../SimpleTable'
+import { Card } from '@sb-config/components/Card'
+import { SimpleTable, SimpleTableRow, SimpleTableCell } from '@sb-config/components/SimpleTable'
 import s from './Typography.module.less'
 export const FontStack = () => (
   <Card>

@@ -1,0 +1,51 @@
+{
+  "name": "terra",
+  "version": "0.0.1",
+  "description": "The VTS design system",
+  "sideEffects": false,
+  "main": "cjs/index.js",
+  "types": "types/index.d.ts",
+  "license": "MIT",
+  "repository": "https://github.com/viewthespace/terra/tree/master/packages/terra",
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rm -rf ./cjs ./esm ./types"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-multi-entry": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "less": "^4.1.1",
+    "postcss": "^8.3.6",
+    "rollup-plugin-less-modules": "^0.1.11"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.2.5",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "rollup": "^2.56.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-typescript2": "^0.30.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "combobox",
+    "form",
+    "input",
+    "multiselect",
+    "react",
+    "react-component",
+    "ui"
+  ]
+}
