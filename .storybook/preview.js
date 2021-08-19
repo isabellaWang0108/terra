@@ -1,5 +1,7 @@
 import '../packages/terra/lib/stylesheets/fonts.less'
 import '../packages/terra/lib/stylesheets/typography.less'
+import '../packages/terra/lib/stylesheets/colors.less'
+
 import './main.less'
 
 export const parameters = {

@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Preview } from '@storybook/addon-docs'
 import { ColorCollection, ColorGroup, ColorSection, Color } from './ColorComponents'
 
 <Meta title="Style/ColorsOverview" />
@@ -14,24 +14,24 @@ Our color system is designed to follow the accessibility guidelines that meet WC
 Brand color plays an important role in Marketing and product design, through brand awareness and brand reinforcement; however it should be used sparingly across the product platform. Incorporate Brand color as accent colors with the use of a neutral color pallette. The Brand color can be used to indicate location, state, and call-to-action.
 
 <ColorCollection title="Brand color">
-  <ColorGroup groupTitle={'Primary Color'}>
-    <ColorSection sectionTitle={'Section 1'}>
-      <Color swatch="#140532" variable="$indigo-120" isWhiteText use="" />
-      <Color swatch="#280f96" variable="$indigo-110" isWhiteText use="" />
-      <Color swatch="#5528ff" variable="$indigo-100" isWhiteText isBaseColor use="" />
-      <Color swatch="#8c82ff" variable="$indigo-090" isWhiteText use="" />
-      <Color swatch="#c8c8ff" variable="$indigo-070" use="" />
+  <ColorGroup groupTitle="Primary Color">
+    <ColorSection sectionTitle="Section 1">
+      <Color swatch="indigo-120" variable="$indigo-120" isWhiteText use="" />
+      <Color swatch="indigo-110" variable="$indigo-110" isWhiteText use="" />
+      <Color swatch="indigo-100" variable="$indigo-100" isWhiteText isBaseColor use="" />
+      <Color swatch="indigo-090" variable="$indigo-090" isWhiteText use="" />
+      <Color swatch="indigo-070" variable="$indigo-070" use="" />
     </ColorSection>
   </ColorGroup>
   <ColorGroup groupTitle={'Accent Color'}>
     <ColorSection sectionTitle={'Section 1'}>
-      <Color swatch="#ffb200" variable="$egg-100" isBaseColor use="" />
-      <Color swatch="#ffd87f" variable="$egg-050" use="" />
+      <Color swatch="egg-100" variable="$egg-100" isBaseColor use="" />
+      <Color swatch="egg-050" variable="$egg-050" use="" />
     </ColorSection>
     <ColorSection sectionTitle={'Section 2'}>
-      <Color swatch="#004b4b" variable="$aqua-120" isWhiteText use="" />
-      <Color swatch="#009696" variable="$aqua-110" isWhiteText use="" />
-      <Color swatch="#00c8c8" variable="$aqua-100" isBaseColor use="" />
+      <Color swatch="aqua-120" variable="$aqua-120" isWhiteText use="" />
+      <Color swatch="aqua-110" variable="$aqua-110" isWhiteText use="" />
+      <Color swatch="aqua-100" variable="$aqua-100" isBaseColor use="" />
     </ColorSection>
   </ColorGroup>
 </ColorCollection>
@@ -45,16 +45,16 @@ Content colors are semantically named for their hierarchical purpose and corresp
 <ColorCollection title="Content color">
   <ColorGroup groupTitle={''}>
     <ColorSection sectionTitle={'Section 1'}>
-      <Color swatch="#000000" variable="$black-100" isWhiteText use="" />
+      <Color swatch="black-100" variable="$black-100" isWhiteText use="" />
     </ColorSection>
     <ColorSection sectionTitle={'Section 2'}>
-      <Color swatch="#666666" variable="$black-060" isWhiteText use="" />
+      <Color swatch="black-060" variable="$black-060" isWhiteText use="" />
     </ColorSection>
     <ColorSection sectionTitle={'Section 3'}>
-      <Color swatch="#a6a6a6" variable="$black-035" isWhiteText use="" />
+      <Color swatch="black-035" variable="$black-035" isWhiteText use="" />
     </ColorSection>
     <ColorSection sectionTitle={'Section 4'}>
-      <Color swatch="#ffffff" variable="$white-100" use="" />
+      <Color swatch="white-100" variable="$white-100" use="" />
     </ColorSection>
   </ColorGroup>
 </ColorCollection>
@@ -68,16 +68,16 @@ Envrionmental colors are colors used for content hierarchical spearations. They 
 <ColorCollection title="Environmental color">
   <ColorGroup groupTitle={''}>
     <ColorSection sectionTitle={'Section 1'}>
-      <Color swatch="#cccccc" variable="$black-020" use="" />
+      <Color swatch="black-020" variable="$black-020" use="" />
     </ColorSection>
     <ColorSection sectionTitle={'Section 2'}>
-      <Color swatch="#e5e5e5" variable="$black-010" use="" />
+      <Color swatch="black-010" variable="$black-010" use="" />
     </ColorSection>
     <ColorSection sectionTitle={'Section 3'}>
-      <Color swatch="#f7f7f7" variable="$black-003" use="" />
+      <Color swatch="black-003" variable="$black-003" use="" />
     </ColorSection>
     <ColorSection sectionTitle={'Section 4'}>
-      <Color swatch="#ffffff" variable="$white-100" use="" />
+      <Color swatch="white-100" variable="$white-100" use="" />
     </ColorSection>
   </ColorGroup>
 </ColorCollection>
@@ -91,20 +91,20 @@ Utility color should assign deliberate meaning to an interface element. Incorpor
 <ColorCollection title="Utility color">
   <ColorGroup groupTitle={'Success Color'}>
     <ColorSection sectionTitle={'Section 1'}>
-      <Color swatch="#008759" variable="$green-140" isWhiteText isBaseColor use="" />
-      <Color swatch="#00e295" variable="$green-100" use="" />
+      <Color swatch="green-140" variable="$green-140" isWhiteText isBaseColor use="" />
+      <Color swatch="green-100" variable="$green-100" use="" />
     </ColorSection>
   </ColorGroup>
   <ColorGroup groupTitle={'Error Color'}>
     <ColorSection sectionTitle={'Section 1'}>
-      <Color swatch="#e60c0c" variable="$red-100" isWhiteText isBaseColor use="" />
-      <Color swatch="#ffa39e" variable="$red-050" use="" />
-      <Color swatch="#fff1f0" variable="$red-010" use="" />
+      <Color swatch="red-100" variable="$red-100" isWhiteText isBaseColor use="" />
+      <Color swatch="red-050" variable="$red-050" use="" />
+      <Color swatch="red-010" variable="$red-010" use="" />
     </ColorSection>
   </ColorGroup>
   <ColorGroup groupTitle={'Warning Color'}>
     <ColorSection sectionTitle={'Section 1'}>
-      <Color swatch="#ff9e00" variable="$orange-100" isWhiteText use="" />
+      <Color swatch="orange-100" variable="$orange-100" isWhiteText use="" />
     </ColorSection>
   </ColorGroup>
 </ColorCollection>
