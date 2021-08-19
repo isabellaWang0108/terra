@@ -13,16 +13,18 @@ type Props = {
 export const SimpleTable = ({ columns, children }: Props) => (
   <table className={s.table} style={{ width: '100%' }}>
     <colgroup>
-      {columns.map(column => (
-        <col style={{ width: `${column.width}%` }} />
+      {columns.map((column, i) => (
+        <col style={{ width: `${column.width}%` }} key={i} />
       ))}
     </colgroup>
     <thead className={s.tableHeader}>
       <tr>
         {columns
           .filter(column => column.name !== '')
-          .map(column => (
-            <th className={s.tableHeaderCell}>{column.name}</th>
+          .map((column, i) => (
+            <th className={s.tableHeaderCell} key={i}>
+              {column.name}
+            </th>
           ))}
       </tr>
     </thead>

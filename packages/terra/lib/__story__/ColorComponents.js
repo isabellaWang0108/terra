@@ -1,85 +1,51 @@
+import cn from 'classnames'
 import { Card } from '@sb-config/components/Card'
 import { SimpleTable, SimpleTableRow, SimpleTableCell } from '@sb-config/components/SimpleTable'
 
-const magicNumbers = {
-  firstColumnWidth: '210px',
-  secondColumnWidth: '100px',
-  columnPadding: '17px',
-  rowHeight: '30px',
-}
+import s from './ColorComponents.module.less'
 
 export const Color = ({ variable, swatch, isBaseColor, isWhiteText }) => {
   return (
-    <div className="swatch">
-      <span
-        style={{
-          display: 'block',
-          background: swatch,
-          width: magicNumbers.firstColumnWidth,
-          height: isBaseColor ? '140px' : '40px',
-          color: isWhiteText ? 'white' : 'black',
-          fontSize: '14px',
-          fontFamily: 'Roboto, sans-serif',
-          paddingTop: '15px',
-          paddingBottom: '15px',
-          paddingLeft: '10px',
-          paddingRight: '10px',
-        }}
-      >
-        {isBaseColor ? (
-          <div style={{ fontWeight: 'bold', marginBottom: '10px' }}>Base color</div>
-        ) : (
-          ''
-        )}
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <span>{variable}</span>
-          <span>{swatch}</span>
-        </div>
-      </span>
-    </div>
+    <span
+      className={cn(s.swatch, s[swatch], {
+        [s.isBaseColor]: isBaseColor,
+        [s.isWhiteText]: isWhiteText,
+      })}
+    >
+      {isBaseColor ? <div className={s.baseColorCopy}>Base color</div> : ''}
+      <div className={s.description}>
+        <span>{variable}</span>
+        <span>{swatch}</span>
+      </div>
+    </span>
   )
 }
 
 export const ColorSection = ({ children }) => {
-  return (
-    <div style={{ marginRight: '20px', marginTop: '15px', marginBottom: '15px' }}>{children}</div>
-  )
+  return <div className={s.section}>{children}</div>
 }
 
 export const ColorGroup = ({ groupTitle, children }) => {
   return (
-    <div
-      className="color"
-      style={{ display: 'flex', fontSize: '14px', fontFamily: 'Roboto, sans-serif' }}
-    >
-      <div style={{ display: 'block' }}>
-        <span style={{ textTransform: 'uppercase', fontWeight: 'bold', color: 'gray' }}>
-          {groupTitle}
-        </span>
-        <div style={{ display: 'flex' }}>{children}</div>
-      </div>
+    <div className={s.group}>
+      <span className={s.groupTitle}>{groupTitle}</span>
+      <div className={s.groupSection}>{children}</div>
     </div>
   )
 }
 
 export const ColorCollection = ({ children }) => {
-  return <div style={{ display: 'flex', fontFamily: 'Roboto, sans-serif' }}>{children}</div>
+  return <div className={s.collection}>{children}</div>
 }
-export const ColorTableColorCell = ({ color, hexCode }) => {
+
+export const ColorTableColorCell = ({ color, hexCode, name }) => {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+    <div className={s.cell}>
       <div>
-        <span style={{ display: 'block' }}>{color}</span>
-        <span style={{ display: 'block' }}>#{hexCode}</span>
+        <div>{color}</div>
+        <div>#{hexCode}</div>
       </div>
-      <div
-        style={{
-          height: '40px',
-          width: '72px',
-          background: `#${hexCode}`,
-          marginLeft: '15px',
-        }}
-      ></div>
+      <div className={cn(s.colorSample, s[name])}></div>
     </div>
   )
 }
@@ -100,7 +66,7 @@ export const ColorTable = () => (
           <SimpleTableCell>On-hover primary link</SimpleTableCell>
           <SimpleTableCell>NA</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="indigo 120" hexCode="140532" />
+            <ColorTableColorCell color="indigo 120" name="indigo-120" hexCode="140532" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -108,7 +74,7 @@ export const ColorTable = () => (
           <SimpleTableCell>On-hover primary button</SimpleTableCell>
           <SimpleTableCell>NA</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="indigo 110" hexCode="280F96" />
+            <ColorTableColorCell color="indigo 110" name="indigo-110" hexCode="280F96" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -120,7 +86,7 @@ export const ColorTable = () => (
             Primary color; primary button; primary link, unread UI, switch on
           </SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="indigo 100" hexCode="5528FF" />
+            <ColorTableColorCell color="indigo 100" name="indigo-100" hexCode="5528FF" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -128,7 +94,7 @@ export const ColorTable = () => (
           <SimpleTableCell>In tooltip link</SimpleTableCell>
           <SimpleTableCell>Deal activity color (deal stage)</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="indigo 090" hexCode="8C82FF" />
+            <ColorTableColorCell color="indigo 090" name="indigo-090" hexCode="8C82FF" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -136,7 +102,7 @@ export const ColorTable = () => (
           <SimpleTableCell>In tooltip link on hover</SimpleTableCell>
           <SimpleTableCell>NA</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="indigo 070" hexCode="E6E6FF" />
+            <ColorTableColorCell color="indigo 070" name="indigo-070" hexCode="C8C8FF" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -146,7 +112,7 @@ export const ColorTable = () => (
           </SimpleTableCell>
           <SimpleTableCell>NA</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="egg 100" hexCode="FFB200" />
+            <ColorTableColorCell color="egg 100" name="egg-100" hexCode="FFB200" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -154,7 +120,7 @@ export const ColorTable = () => (
           <SimpleTableCell>hover color for egg-100</SimpleTableCell>
           <SimpleTableCell>NA</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="egg 050" hexCode="FFD87F" />
+            <ColorTableColorCell color="egg 050" name="egg-050" hexCode="FFD87F" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -162,7 +128,7 @@ export const ColorTable = () => (
           <SimpleTableCell>Main add deal button on-hover in main header</SimpleTableCell>
           <SimpleTableCell>Deal activity color (proposal)</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="aqua 120" hexCode="004B4B" />
+            <ColorTableColorCell color="aqua 120" name="aqua-120" hexCode="004B4B" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -170,7 +136,7 @@ export const ColorTable = () => (
           <SimpleTableCell>main add deal button on-hover in main header</SimpleTableCell>
           <SimpleTableCell>NA</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="aqua 110" hexCode="009696" />
+            <ColorTableColorCell color="aqua 110" name="aqua-110" hexCode="009696" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -180,7 +146,7 @@ export const ColorTable = () => (
           </SimpleTableCell>
           <SimpleTableCell>Deal activity color (new deal), quick action button</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="aqua 100" hexCode="00C8C8" />
+            <ColorTableColorCell color="aqua 100" name="aqua-100" hexCode="00C8C8" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -190,7 +156,7 @@ export const ColorTable = () => (
             Deal activity color (deal task), primary text color, title text, selected state of tabs
           </SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="black 100" hexCode="000000" />
+            <ColorTableColorCell color="black 100" name="black-100" hexCode="000000" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -198,7 +164,7 @@ export const ColorTable = () => (
           <SimpleTableCell>hover state for tabs on side nav</SimpleTableCell>
           <SimpleTableCell>NA</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="black 090" hexCode="191919" />
+            <ColorTableColorCell color="black 090" name="black-090" hexCode="191919" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -210,7 +176,7 @@ export const ColorTable = () => (
             subtext, labels, inactive state of tabs, empty state text, muted text
           </SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="black 060" hexCode="666666" />
+            <ColorTableColorCell color="black 060" name="black-060" hexCode="666666" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -218,7 +184,7 @@ export const ColorTable = () => (
           <SimpleTableCell>Empty state copy, muted copy, field placeholder copy</SimpleTableCell>
           <SimpleTableCell>field placeholder copy</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="black 035" hexCode="A6A6A6" />
+            <ColorTableColorCell color="black 035" name="black-035" hexCode="A6A6A6" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -228,7 +194,7 @@ export const ColorTable = () => (
           </SimpleTableCell>
           <SimpleTableCell>NA</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="black 020" hexCode="CCCCCC" />
+            <ColorTableColorCell color="black 020" name="black-020" hexCode="CCCCCC" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -236,7 +202,7 @@ export const ColorTable = () => (
           <SimpleTableCell>secondary button, table row line divider </SimpleTableCell>
           <SimpleTableCell>Field placeholder copy, space pill UI, switch off</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="black 010" hexCode="E5E5E5" />
+            <ColorTableColorCell color="black 010" name="black-010" hexCode="E5E5E5" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -244,7 +210,7 @@ export const ColorTable = () => (
           <SimpleTableCell>disabled button, on-hover table row background color</SimpleTableCell>
           <SimpleTableCell>Background color, text box, line divider</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="black 003" hexCode="F7F7F7" />
+            <ColorTableColorCell color="black 003" name="black-003" hexCode="F7F7F7" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -256,7 +222,7 @@ export const ColorTable = () => (
             Card background, text on black tooltip, text on primary button
           </SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="white 100" hexCode="FFFFFF" />
+            <ColorTableColorCell color="white 100" name="white-100" hexCode="FFFFFF" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -267,7 +233,7 @@ export const ColorTable = () => (
             (positive)
           </SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="green 140" hexCode="008759" />
+            <ColorTableColorCell color="green 140" name="green-140" hexCode="008759" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -275,7 +241,7 @@ export const ColorTable = () => (
           <SimpleTableCell>non essentials success accent</SimpleTableCell>
           <SimpleTableCell>success accent</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="green 100" hexCode="00E295" />
+            <ColorTableColorCell color="green 100" name="green-100" hexCode="00E295" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -285,7 +251,7 @@ export const ColorTable = () => (
             Error, failure, delete button, reject button, tenant sentiment (negative)
           </SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="red 100" hexCode="E60C0C" />
+            <ColorTableColorCell color="red 100" name="red-100" hexCode="E60C0C" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -293,7 +259,7 @@ export const ColorTable = () => (
           <SimpleTableCell>error message boarder</SimpleTableCell>
           <SimpleTableCell>NA</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="red 050" hexCode="FFA39E" />
+            <ColorTableColorCell color="red 050" name="red-050" hexCode="FFA39E" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -301,7 +267,7 @@ export const ColorTable = () => (
           <SimpleTableCell>error message background</SimpleTableCell>
           <SimpleTableCell>NA</SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="red 010" hexCode="FFF1F0" />
+            <ColorTableColorCell color="red 010" name="red-050" hexCode="FFF1F0" />
           </SimpleTableCell>
         </SimpleTableRow>
         <SimpleTableRow>
@@ -312,7 +278,7 @@ export const ColorTable = () => (
             sentiment (neutral)
           </SimpleTableCell>
           <SimpleTableCell>
-            <ColorTableColorCell color="orange 100" hexCode="FF9E00" />
+            <ColorTableColorCell color="orange 100" name="orange-100" hexCode="FF9E00" />
           </SimpleTableCell>
         </SimpleTableRow>
       </SimpleTable>
