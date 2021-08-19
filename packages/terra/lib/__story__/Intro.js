@@ -69,7 +69,7 @@ export const Components = () => (
             return <div style={contentCard}>
                 <h3> <img style={cardIcon} src={item.icon} />{item.title}</h3>
                 <div style={containerWithTopLine}>
-                    <p>{item.label}</p>
+                    <p>{item.body}</p>
                 </div>
             </div>
         })}
