@@ -84,7 +84,7 @@ export const OtherLibrary = () => (
         <div style={{ padding: '60px 0px', display: 'flex', flexWrap: 'wrap', justifyContent:'stretch' }}>
             {content.systems.map((item) => {
                 return <div style={systemCard}>
-                    <div style={{ fontSize: '20pt', backgroundColor: '#5528FF', padding: 32, paddingTop: 92, color: 'white' }}>
+                    <div style={{ fontFamily: 'Roboto, sans-serif', fontSize: '19pt', backgroundColor: '#5528FF', padding: 32, paddingTop: 92, color: 'white' }}>
                         <img style={{ marginRight: 16 , height:20}} src={Logo} />{item.label}
                     </div>
                     <h3 style={{ marginLeft: 16 }}>{item.title}</h3>
