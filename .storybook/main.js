@@ -6,11 +6,9 @@ module.exports = {
       title: 'VTS Core Design System',
       url: 'https://design-system.vts.com',
     },
-    /*
     marketplace: {
       title: 'Marketplace Design System',
       url: 'https://design-system.truva.com',
     },
-    */
   },
 }
