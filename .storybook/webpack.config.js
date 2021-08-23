@@ -3,28 +3,19 @@ const filter = require('lodash/filter')
 
 const lessLoader = {
   test: /\.less$/,
-  use: [
-    MiniCssExtractPlugin.loader,
-    {
-      loader: 'css-loader',
-    },
-    {
-      loader: 'less-loader',
-      options: {
-        lessOptions: {
-          modifyVars: {},
-          javascriptEnabled: true,
-        },
-      },
-    },
-  ],
+  use: ['style-loader', 'css-loader', 'less-loader'],
   exclude: /\.module\.less$/,
+}
+
+const cssLoader = {
+  test: /\.css$/,
+  use: ['style-loader', 'css-loader']
 }
 
 const lessModuleLoader = {
   test: /\.module\.less$/i,
   use: [
-    MiniCssExtractPlugin.loader,
+    'style-loader',
     {
       loader: 'css-loader',
       options: {
@@ -35,19 +26,11 @@ const lessModuleLoader = {
         },
       },
     },
-    {
-      loader: 'less-loader',
-      options: {
-        lessOptions: {
-          modifyVars: {},
-          javascriptEnabled: true,
-        },
-      },
-    },
+    'less-loader',
   ],
   sideEffects: false,
   exclude: /(?<!module)\.less/g,
-};
+}
 
 const configureRules = config => {
   config.module.rules.push(lessLoader)
@@ -59,23 +42,20 @@ const configureRules = config => {
   defaultCssRules.forEach(rule => {
     config.module.rules.splice(config.module.rules.indexOf(rule), 1)
   })
+
+  config.module.rules.push(cssLoader)
 }
 
-const configurePlugins = config => {
-  config.plugins.push(new MiniCssExtractPlugin())
-}
-
-const configureAlias = (config) => {
+const configureAlias = config => {
   config.resolve.alias = {
     ...(config.resolve.alias || {}),
-    '@sb-config': __dirname
+    '@sb-config': __dirname,
   }
 }
 
 module.exports = async ({ config }) => {
   configureAlias(config)
   configureRules(config)
-  configurePlugins(config)
 
   return config
 }
