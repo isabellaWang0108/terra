@@ -1,0 +1,53 @@
+import { Meta } from '@storybook/addon-docs'
+import { Card } from '@sb-config/components/Card'
+import { Tabs, Tab } from '@sb-config/components/Tabs'
+import IconOverview from './IconOverview.mdx'
+import IconUsage from './IconUsage.mdx'
+
+export const IconPage = () => {
+  const [currentTab, setCurrentTab] = React.useState('overview')
+  return (
+    <>
+      <Tabs>
+        <Tab
+          id={'overview'}
+          onClick={() => {
+            setCurrentTab('overview')
+          }}
+          selected={currentTab === 'overview'}
+        >
+          Overview
+        </Tab>
+        <Tab
+          id={'usage'}
+          onClick={() => {
+            setCurrentTab('usage')
+          }}
+          selected={currentTab === 'usage'}
+        >
+          Usage
+        </Tab>
+        <Tab
+          id={'code'}
+          onClick={() => {
+            setCurrentTab('code')
+          }}
+          selected={currentTab === 'code'}
+        >
+          Code
+        </Tab>
+      </Tabs>
+      {currentTab === 'overview' ? <IconOverview /> : null}
+      {currentTab === 'usage' ? <IconUsage /> : null}
+    </>
+  )
+}
+
+<Meta title="Style/Icon" />
+
+# Iconography
+
+## Iconography uses symbols to represent an object visually. They communicate a distinct and informative message. Icons should be used sparingly throughout the product to provide clarity and reduce cognitive load on users.
+
+
+<IconPage />
