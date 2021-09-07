@@ -3,121 +3,173 @@ import { Card } from '@sb-config/components/Card'
 import { SimpleTable, SimpleTableRow, SimpleTableCell } from '@sb-config/components/SimpleTable'
 
 
-export const FontStack = () => (
-  <Card>
-    <Card.Content isPadded>
-      <h1 className={s.roboto}>Roboto</h1>
-      <h1 className={s.roobert}>Roobert</h1>
-      <h1 className={s.proxima}>Proxima nova</h1>
-    </Card.Content>
-  </Card>
-)
-
-
 export const Iconsize = () => (
+<div style={{display:'flex', margin:60, justifyContent:'space-around'}}>
+
+
   <Card>
     <Card.Header>
-      <h2>Roboto</h2>
+      <h3>Web icon size</h3>
+      <div style={{display:'flex', justifyContent:'space-around'}}>
+         <label>TYPE</label> <label>FONT</label> <label>ICON</label>
+      </div>
     </Card.Header>
+
     <Card.Content>
       <SimpleTable
-        title="Roboto"
         columns={[
-          { name: '', width: 30 },
-          { name: '', width: 70 },
+          { name: '', width: 33 },
+          { name: '', width: 33 },
+          { name: '', width: 33 },
         ]}
       >
         <SimpleTableRow>
           <SimpleTableCell>
-            <h1>Heading 1</h1>
+            <p>XS</p>
           </SimpleTableCell>
           <SimpleTableCell>
-            <FontStats font="Roboto" weight="Regular" size="32px" letterSizing="0px" />
+            <p>12PX</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+           <span className="icon vts-logo" style={{fontSize:12}}></span>
           </SimpleTableCell>
         </SimpleTableRow>
+
         <SimpleTableRow>
           <SimpleTableCell>
-            <h2>Heading 2</h2>
+            <p>SM</p>
           </SimpleTableCell>
           <SimpleTableCell>
-            <FontStats font="Roboto" weight="Regular" size="24px" letterSizing="0px" />
+            <p>16PX</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+           <span className="icon vts-logo" style={{fontSize:16}}></span>
           </SimpleTableCell>
         </SimpleTableRow>
+
         <SimpleTableRow>
           <SimpleTableCell>
-            <h3>Heading 3</h3>
+            <p>MD</p>
           </SimpleTableCell>
           <SimpleTableCell>
-            <FontStats font="Roboto" weight="Regular" size="18px" letterSizing="0px" />
+            <p>20PX</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+           <span className="icon vts-logo" style={{fontSize:20}}></span>
           </SimpleTableCell>
         </SimpleTableRow>
+
         <SimpleTableRow>
           <SimpleTableCell>
-            <h4>Heading 4</h4>
+            <p>LG</p>
           </SimpleTableCell>
           <SimpleTableCell>
-            <FontStats font="Roboto" weight="Medium" size="14px" letterSizing="0px" />
+            <p>24PX</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+           <span className="icon vts-logo" style={{fontSize:24}}></span>
           </SimpleTableCell>
         </SimpleTableRow>
+
         <SimpleTableRow>
           <SimpleTableCell>
-            <p className="body-1 medium">Body 1 medium</p>
+            <p>XL</p>
           </SimpleTableCell>
           <SimpleTableCell>
-            <FontStats font="Roboto" weight="Medium" size="14px" letterSizing="0px" />
+            <p>50PX</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+           <span className="icon vts-logo" style={{fontSize:50}}></span>
           </SimpleTableCell>
         </SimpleTableRow>
-        <SimpleTableRow>
-          <SimpleTableCell>
-            <p className="body-1">Body 1 regular</p>
-          </SimpleTableCell>
-          <SimpleTableCell>
-            <FontStats font="Roboto" weight="Regular" size="14px" letterSizing="0px" />
-          </SimpleTableCell>
-        </SimpleTableRow>
-        <SimpleTableRow>
-          <SimpleTableCell>
-            <p className="body-2 medium">Body 2 medium</p>
-          </SimpleTableCell>
-          <SimpleTableCell>
-            <FontStats font="Roboto" weight="Medium" size="12px" letterSizing="0px" />
-          </SimpleTableCell>
-        </SimpleTableRow>
-        <SimpleTableRow>
-          <SimpleTableCell>
-            <p className="body-3">Body 2 regular</p>
-          </SimpleTableCell>
-          <SimpleTableCell>
-            <FontStats font="Roboto" weight="Regular" size="12px" letterSizing="0px" />
-          </SimpleTableCell>
-        </SimpleTableRow>
-        <SimpleTableRow>
-          <SimpleTableCell>
-            <p className="body-3 medium">Body 3 medium</p>
-          </SimpleTableCell>
-          <SimpleTableCell>
-            <FontStats font="Roboto" weight="Medium" size="10px" letterSizing="0px" />
-          </SimpleTableCell>
-        </SimpleTableRow>
-        <SimpleTableRow>
-          <SimpleTableCell>
-            <p className="body-3">Body 3 regular</p>
-          </SimpleTableCell>
-          <SimpleTableCell>
-            <FontStats font="Roboto" weight="Regular" size="10px" letterSizing="0px" />
-          </SimpleTableCell>
-        </SimpleTableRow>
-        <SimpleTableRow>
-          <SimpleTableCell>
-            <label>Labels</label>
-          </SimpleTableCell>
-          <SimpleTableCell>
-            <FontStats font="Roboto" weight="Regular" size="10px" letterSizing="0px" />
-          </SimpleTableCell>
-        </SimpleTableRow>
+        
       </SimpleTable>
     </Card.Content>
   </Card>
+
+
+  <Card style={{width:"100%"}}>
+    <Card.Header>
+      <h3>Mobile icon size</h3>
+      <div style={{display:'flex', justifyContent:'space-around'}}>
+         <label>TYPE</label> <label>FONT</label> <label>ICON</label>
+      </div>
+    </Card.Header>
+
+    <Card.Content>
+      <SimpleTable
+        title=" "
+        columns={[
+          { name: '', width: 33 },
+          { name: '', width: 33 },
+          { name: '', width: 33 },
+        ]}
+      >
+        <SimpleTableRow>
+          <SimpleTableCell>
+            <p>Extra Small</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+            <p>11PX</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+           <span className="icon vts-logo" style={{fontSize:11}}></span>
+          </SimpleTableCell>
+        </SimpleTableRow>
+
+        <SimpleTableRow>
+          <SimpleTableCell>
+            <p>Small</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+            <p>13PX</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+           <span className="icon vts-logo" style={{fontSize:13}}></span>
+          </SimpleTableCell>
+        </SimpleTableRow>
+
+        <SimpleTableRow>
+          <SimpleTableCell>
+            <p>Regular</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+            <p>15PX</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+           <span className="icon vts-logo" style={{fontSize:15}}></span>
+          </SimpleTableCell>
+        </SimpleTableRow>
+
+        <SimpleTableRow>
+          <SimpleTableCell>
+            <p>Medium</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+            <p>17PX</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+           <span className="icon vts-logo" style={{fontSize:17}}></span>
+          </SimpleTableCell>
+        </SimpleTableRow>
+
+        <SimpleTableRow>
+          <SimpleTableCell>
+            <p>Large</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+            <p>24PX</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+           <span className="icon vts-logo" style={{fontSize:24}}></span>
+          </SimpleTableCell>
+        </SimpleTableRow>
+        
+      </SimpleTable>
+    </Card.Content>
+  </Card>
+
+</div>
 )
 
 const content = {
