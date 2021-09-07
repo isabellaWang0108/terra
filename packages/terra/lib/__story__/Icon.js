@@ -5,22 +5,17 @@ import { SimpleTable, SimpleTableRow, SimpleTableCell } from '@sb-config/compone
 
 export const Iconsize = () => (
 <div style={{display:'flex', margin:60, justifyContent:'space-around'}}>
-
-
   <Card>
     <Card.Header>
       <h3>Web icon size</h3>
-      <div style={{display:'flex', justifyContent:'space-around'}}>
-         <label>TYPE</label> <label>FONT</label> <label>ICON</label>
-      </div>
     </Card.Header>
 
     <Card.Content>
       <SimpleTable
         columns={[
-          { name: '', width: 33 },
-          { name: '', width: 33 },
-          { name: '', width: 33 },
+          { name: 'TYPE', width: 33 },
+          { name: 'FONT', width: 33 },
+          { name: 'ICON', width: 33 },
         ]}
       >
         <SimpleTableRow>
@@ -91,18 +86,15 @@ export const Iconsize = () => (
   <Card style={{width:"100%"}}>
     <Card.Header>
       <h3>Mobile icon size</h3>
-      <div style={{display:'flex', justifyContent:'space-around'}}>
-         <label>TYPE</label> <label>FONT</label> <label>ICON</label>
-      </div>
     </Card.Header>
 
     <Card.Content>
       <SimpleTable
         title=" "
         columns={[
-          { name: '', width: 33 },
-          { name: '', width: 33 },
-          { name: '', width: 33 },
+          { name: 'TYPE', width: 33 },
+          { name: 'FONT', width: 33 },
+          { name: 'ICON', width: 33 },
         ]}
       >
         <SimpleTableRow>
@@ -172,26 +164,116 @@ export const Iconsize = () => (
 </div>
 )
 
+
 const content = {
   logoIcons:[
-    { name:'vts-logo-no-text' },
-    { name:'vts-logo' },
-    { name:'vts-logo-side-text' }
+    { name:'vts-logo-no-text', usage: "VTS vertical lockup logo, the preferred expression for the VTS brand."},
+    { name:'vts-logo', usage: "The logomark is preferred for situations that warrant an abbreviated expression." },
+    { name:'vts-logo-side-text', usage: "VTS horizontal lockup logo, the preferred expression for the VTS brand." }
   ],
   productIcons:[
-    { name:'doc-filled' },{ name:'download' },{ name:'file-v1' },{ name:'file-v2' },{ name:'information' },{ name:'pdf-filled' },{ name:'upload' },{ name:'xls-filled' },
-    { name:'back-arrow' },{ name:'dots' },{ name:'link-out' },{ name:'list-expanded' },{ name:'nav-down' },{ name:'nav-left' },{ name:'nav-right' },{ name:'nav-up' },
-    { name:'calendar' }, { name:'clock' }, { name:'connect' }, { name:'encumbrance' }, { name:'financial' }, { name:'flame' }, { name:'floorplan' }, { name:'hourglass' },
-    { name:'key' }, { name:'mag' }, { name:'mail' }, { name:'mobile' }, { name:'note' }, { name:'notification' }, { name:'paperclip' }, { name:'picture' },
-    { name:'public-link' }, { name:'reminder' }, { name:'activity' }, { name:'check' }, { name:'close-v1' }, { name:'close-v2' }, { name:'collapse' }, { name:'comment' },
-    { name:'exclamation-sign' }, { name:'exclamation' }, { name:'expand' }, { name:'filter' }, { name:'hide' }, { name:'home' }, { name:'info' }, { name:'location' },
-    { name:'lock' }, { name:'move' }, { name:'move-v2' }, { name:'pencil' }, { name:'play' }, { name:'plus-v2' }, { name:'point' }, { name:'preview' },
-    { name:'question' }, { name:'reset' }, { name:'ribbon' }, { name:'ribbon-filled' }, { name:'set-up' }, { name:'share' }, { name:'sort-down' }, { name:'sort-up' },
-    { name:'task' }, { name:'star-filled' }, { name:'star-outlined' }, { name:'contact-info' }, { name:'user' }, { name:'users' }, { name:'building-list' }, { name:'building-small' },
-    { name:'building' }, { name:'officepark' }, { name:'site-plan' }, { name:'stack' }, { name:'3d-tour' }, { name:'download2' }, { name:'download-multiple' }, { name:'flexible-size-area' },
-    { name:'link' }, { name:'location' }, { name:'tourbook' }, { name:'tourbook-filled' }, { name:'heart-outline' }, { name:'heart' }, { name:'union' }, { name:'map-refresh' },
-    { name:'cube' },
+    { name:'doc-filled', usage:"Symbol of documentation files." },
+    { name:'download', usage:"" },
+    { name:'file-v1', usage:"" },
+    { name:'file-v2', usage:"" },
+    { name:'information', usage:"" },
+    { name:'pdf-filled', usage:"" },
+    { name:'upload', usage:"" },
+    { name:'xls-filled', usage:"" },
+    
+    { name:'back-arrow', usage:"" },
+    { name:'dots', usage:"" },
+    { name:'link-out', usage:"" },
+    { name:'list-expanded', usage:"" },
+    { name:'nav-down', usage:"" },
+    { name:'nav-left', usage:"" },
+    { name:'nav-right', usage:"" },
+    { name:'nav-up', usage:"" },
+    
+    { name:'calendar', usage:"" }, 
+    { name:'clock', usage:"" }, 
+    { name:'connect', usage:"" }, 
+    { name:'encumbrance', usage:"" }, 
+    { name:'financial', usage:"" }, 
+    { name:'flame', usage:"" }, 
+    { name:'floorplan', usage:"" }, 
+    { name:'hourglass', usage:"" },
+    
+    { name:'key', usage:"" }, 
+    { name:'mag', usage:"" }, 
+    { name:'mail', usage:"" }, 
+    { name:'mobile', usage:"" }, 
+    { name:'note', usage:"" }, 
+    { name:'notification', usage:"" }, 
+    { name:'paperclip', usage:"" }, 
+    { name:'picture', usage:"" },
+    
+    { name:'public-link', usage:"" }, 
+    { name:'reminder', usage:"" }, 
+    { name:'activity', usage:"" }, 
+    { name:'check', usage:"" }, 
+    { name:'close-v1', usage:"" }, 
+    { name:'close-v2', usage:"" }, 
+    { name:'collapse', usage:"" }, 
+    { name:'comment', usage:"" },
+    
+    { name:'exclamation-sign', usage:"" }, 
+    { name:'exclamation', usage:"" }, 
+    { name:'expand', usage:"" }, 
+    { name:'filter', usage:"" }, 
+    { name:'hide', usage:"" }, 
+    { name:'home', usage:"" }, 
+    { name:'info', usage:"" }, 
+    { name:'location', usage:"" },
+    
+    { name:'lock', usage:"" }, 
+    { name:'move', usage:"" }, 
+    { name:'move-v2', usage:"" }, 
+    { name:'pencil', usage:"" }, 
+    { name:'play', usage:"" }, 
+    { name:'plus-v2', usage:"" }, 
+    { name:'point', usage:"" }, 
+    { name:'preview', usage:"" },
+    
+    { name:'question', usage:"" }, 
+    { name:'reset', usage:"" }, 
+    { name:'ribbon', usage:"" }, 
+    { name:'ribbon-filled', usage:"" }, 
+    { name:'set-up', usage:"" }, 
+    { name:'share', usage:"" }, 
+    { name:'sort-down', usage:"" }, 
+    { name:'sort-up', usage:"" },
+    
+    { name:'task', usage:"" }, 
+    { name:'star-filled', usage:"" }, 
+    { name:'star-outlined', usage:"" }, 
+    { name:'contact-info', usage:"" }, 
+    { name:'user', usage:"" }, 
+    { name:'users', usage:"" }, 
+    { name:'building-list', usage:"" }, 
+    { name:'building-small', usage:"" },
+    
+    { name:'building', usage:"" }, 
+    { name:'officepark', usage:"" }, 
+    { name:'site-plan', usage:"" }, 
+    { name:'stack', usage:"" }, 
+    { name:'3d-tour', usage:"" }, 
+    { name:'download2', usage:"" }, 
+    { name:'download-multiple', usage:"" }, 
+    { name:'flexible-size-area', usage:"" },
+    
+    { name:'link', usage:"" }, 
+    { name:'location', usage:"" }, 
+    { name:'tourbook', usage:"" }, 
+    { name:'tourbook-filled', usage:"" }, 
+    { name:'heart-outline', usage:"" }, 
+    { name:'heart', usage:"" }, 
+    { name:'union', usage:"" }, 
+    { name:'map-refresh', usage:"" },
+    
+    { name:'cube', usage:"" },
   ]
+
 }
 
 
@@ -227,5 +309,72 @@ export const ProductIcons = () => (
   </div>
 
 )
+
+export const LogoUsage = () => (
+  <Card>
+    <Card.Header>
+      <h3>Logos</h3>
+    </Card.Header>
+
+    <Card.Content>
+      <SimpleTable
+        columns={[
+          { name: 'ICON', width: 10 },
+          { name: 'NAME', width: 30 },
+          { name: 'USAGE', width: 60 },
+        ]}
+      >
+       {content.logoIcons.map((item)=>{
+       return <SimpleTableRow>
+          <SimpleTableCell>
+          <span className={item.name+" icon"} style={{fontSize:32}}></span>
+          </SimpleTableCell>
+          <SimpleTableCell>
+            <p>{item.name}</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+           <p>{item.usage}</p>
+          </SimpleTableCell>
+        </SimpleTableRow>
+       }) }
+
+      </SimpleTable>
+    </Card.Content>
+  </Card>
+)
+
+export const ProductIconUsage = () => (
+  <Card>
+    <Card.Header>
+      <h3>Product icon</h3>
+    </Card.Header>
+
+    <Card.Content>
+      <SimpleTable
+        columns={[
+          { name: 'ICON', width: 10 },
+          { name: 'NAME', width: 30 },
+          { name: 'USAGE', width: 60 },
+        ]}
+      >
+       {content.productIcons.map((item)=>{
+       return <SimpleTableRow>
+          <SimpleTableCell>
+          <span className={item.name+" icon"} style={{fontSize:32}}></span>
+          </SimpleTableCell>
+          <SimpleTableCell>
+            <p>{item.name}</p>
+          </SimpleTableCell>
+          <SimpleTableCell>
+           <p>{item.usage}</p>
+          </SimpleTableCell>
+        </SimpleTableRow>
+       }) }
+
+      </SimpleTable>
+    </Card.Content>
+  </Card>
+)
+
 
 const iconCardStyle={backgroundColor:'#F7F7F7', width:100, height:100, textAlign:'center', marginRight:16, marginTop:16}
