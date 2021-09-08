@@ -257,7 +257,7 @@ const content = {
     { name:'officepark', usage:"Indicates multiple propeties." }, 
     { name:'site-plan', usage:"Denotes or displays site plan." }, 
     { name:'stack', usage:"Denotes or displays stacking plan." }, 
-    { name:'3d-tour', usage:"Indicates a 3d tour." }, 
+    { name:'tour-3d', usage:"Indicates a 3d tour." }, 
     { name:'download2', usage:"Starts downloading one asset." }, 
     { name:'download-multiple', usage:"Starts downloading multiple assets." }, 
     { name:'flexible-size-area', usage:"Indicates a flexible size area." },
