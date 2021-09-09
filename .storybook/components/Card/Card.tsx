@@ -44,7 +44,7 @@ const CardHeader = ({ className = '', children }: CardHeaderProps) => (
       [s.cardHeader]: true,
       [className]: !!className,
     })}
-    style={{borderStyle:'none', padding:'6px 16px 0px 16px'}}
+    
   >
     {children}
   </div>

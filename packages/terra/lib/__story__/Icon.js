@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import { Card } from '@sb-config/components/Card'
 import { SimpleTable, SimpleTableRow, SimpleTableCell } from '@sb-config/components/SimpleTable'
 import React from 'react';
+import s from './Icon.module.less'
 
 export const Iconsize = () => (
 <div style={{display:'flex', margin:60, justifyContent:'space-around'}}>
@@ -26,7 +27,7 @@ export const Iconsize = () => (
             <p>12PX</p>
           </SimpleTableCell>
           <SimpleTableCell>
-           <span className="icon vts-logo" style={{fontSize:12}}></span>
+           <span className="icon vts-logo size-12"></span>
           </SimpleTableCell>
         </SimpleTableRow>
 
@@ -38,7 +39,7 @@ export const Iconsize = () => (
             <p>16PX</p>
           </SimpleTableCell>
           <SimpleTableCell>
-           <span className="icon vts-logo" style={{fontSize:16}}></span>
+           <span className="icon vts-logo size-16"></span>
           </SimpleTableCell>
         </SimpleTableRow>
 
@@ -50,7 +51,7 @@ export const Iconsize = () => (
             <p>20PX</p>
           </SimpleTableCell>
           <SimpleTableCell>
-           <span className="icon vts-logo" style={{fontSize:20}}></span>
+           <span className="icon vts-logo size-20"></span>
           </SimpleTableCell>
         </SimpleTableRow>
 
@@ -62,7 +63,7 @@ export const Iconsize = () => (
             <p>24PX</p>
           </SimpleTableCell>
           <SimpleTableCell>
-           <span className="icon vts-logo" style={{fontSize:24}}></span>
+           <span className="icon vts-logo size-24"></span>
           </SimpleTableCell>
         </SimpleTableRow>
 
@@ -74,7 +75,7 @@ export const Iconsize = () => (
             <p>50PX</p>
           </SimpleTableCell>
           <SimpleTableCell>
-           <span className="icon vts-logo" style={{fontSize:50}}></span>
+           <span className="icon vts-logo size-50"></span>
           </SimpleTableCell>
         </SimpleTableRow>
         
@@ -83,7 +84,7 @@ export const Iconsize = () => (
   </Card>
 
 
-  <Card style={{width:"100%"}}>
+  <Card>
     <Card.Header>
       <h3>Mobile icon size</h3>
     </Card.Header>
@@ -105,7 +106,7 @@ export const Iconsize = () => (
             <p>11PX</p>
           </SimpleTableCell>
           <SimpleTableCell>
-           <span className="icon vts-logo" style={{fontSize:11}}></span>
+           <span className="icon vts-logo size-11"></span>
           </SimpleTableCell>
         </SimpleTableRow>
 
@@ -117,7 +118,7 @@ export const Iconsize = () => (
             <p>13PX</p>
           </SimpleTableCell>
           <SimpleTableCell>
-           <span className="icon vts-logo" style={{fontSize:13}}></span>
+           <span className="icon vts-logo size-13"></span>
           </SimpleTableCell>
         </SimpleTableRow>
 
@@ -129,7 +130,7 @@ export const Iconsize = () => (
             <p>15PX</p>
           </SimpleTableCell>
           <SimpleTableCell>
-           <span className="icon vts-logo" style={{fontSize:15}}></span>
+           <span className="icon vts-logo size-15"></span>
           </SimpleTableCell>
         </SimpleTableRow>
 
@@ -141,7 +142,7 @@ export const Iconsize = () => (
             <p>17PX</p>
           </SimpleTableCell>
           <SimpleTableCell>
-           <span className="icon vts-logo" style={{fontSize:17}}></span>
+           <span className="icon vts-logo size-17" ></span>
           </SimpleTableCell>
         </SimpleTableRow>
 
@@ -153,7 +154,7 @@ export const Iconsize = () => (
             <p>24PX</p>
           </SimpleTableCell>
           <SimpleTableCell>
-           <span className="icon vts-logo" style={{fontSize:24}}></span>
+           <span className="icon vts-logo size-24"></span>
           </SimpleTableCell>
         </SimpleTableRow>
         
@@ -282,7 +283,7 @@ export const LogoIcons = () => (
 
   <div style={{display:'flex'}}>
     {content.logoIcons.map((item, i)=>{
-      return  <div style={iconCardStyle} key={i}>
+      return  <div className={s.iconCardStyle} key={i}>
        <br/>
        <span className={item.name + ' icon'}></span>
        <br/>
@@ -304,7 +305,7 @@ export const ProductIcons = () => (
         return 0;
        })
      .map((item, i)=>{
-      return  <div style={iconCardStyle} key={i}>
+      return  <div className={s.iconCardStyle} key={i}>
        <br/>
        <span className={item.name + ' icon'}></span>
        <br/>
@@ -321,7 +322,7 @@ class Content extends React.Component {
 
   render() {
     return <div>
-       <input style={{width:'98%', marginBottom:16, padding:12, borderRadius:5, border:'solid 1px #ccc'}}
+       <input className={s.inputBox}
               type="text"
               placeholder="Please enter a keyword to search"
               onChange={(e)=>{ this.setState({input:e.target.value}) }}>
@@ -405,6 +406,3 @@ export const UsagePage = () => (
   <Content/>
 )
 
-
-
-const iconCardStyle={backgroundColor:'#F7F7F7', width:100, height:100, textAlign:'center', marginRight:16, marginTop:16}
